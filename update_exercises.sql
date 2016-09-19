@@ -8,7 +8,7 @@ SELECT 'All albums' AS 'Query Attempted';
 SELECT * FROM albums;
 
 UPDATE albums
-SET release_date = 1850
+SET release_date = release_date - 100
 WHERE release_date < 1980;
 
 
