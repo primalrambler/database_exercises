@@ -4,10 +4,11 @@ first_name = 'Irena'
 OR first_name ='Vidya' 
 OR first_name = 'Maya'
 )
-ORDER BY first_name, last_name;
+ORDER BY last_name, first_name;
 
 -- begins with an E or ends with an E
-SELECT * FROM employees WHERE last_name LIKE '%e' OR last_name LIKE 'e%';
+SELECT * FROM employees WHERE last_name LIKE '%e' OR last_name LIKE 'e%'
+ORDER BY emp_no;
 
 -- begins and ends with an E
 SELECT * FROM employees WHERE last_name LIKE '%e' AND last_name LIKE 'e%';
