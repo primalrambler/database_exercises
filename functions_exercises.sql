@@ -25,3 +25,8 @@ SELECT first_name,last_name, COUNT(*) AS 'shared' FROM employees
 WHERE last_name LIKE '%q%' AND last_name NOT LIKE '%qu%'
 GROUP BY first_name
 ORDER BY count(last_name) DESC ;
+
+
+-- formated / aliased data
+SELECT CONCAT(emp_no,' - ',last_name,', ',first_name) AS 'FULL NAME', birth_date AS DOB FROM employees
+LIMIT 10;
