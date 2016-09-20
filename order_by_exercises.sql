@@ -3,7 +3,8 @@ SELECT * FROM employees WHERE gender = 'M' AND (
 first_name = 'Irena' 
 OR first_name ='Vidya' 
 OR first_name = 'Maya'
-);
+)
+ORDER BY first_name, last_name;
 
 -- begins with an E or ends with an E
 SELECT * FROM employees WHERE last_name LIKE '%e' OR last_name LIKE 'e%';
