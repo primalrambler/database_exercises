@@ -14,7 +14,8 @@ ORDER BY emp_no DESC;
 SELECT * FROM employees WHERE last_name LIKE '%e' AND last_name LIKE 'e%';
 
 -- born on Christmas and hired in the '90's
-SELECT * FROM employees WHERE birth_date LIKE '%-12-25' AND hire_date LIKE '199%';
+SELECT * FROM employees WHERE birth_date LIKE '%-12-25' AND hire_date LIKE '199%'
+ORDER BY birth_date, hire_date DESC;
 
 -- names with Q in it but not QU
 SELECT * FROM employees WHERE last_name LIKE '%q%' AND last_name NOT LIKE '%qu%';
