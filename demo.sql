@@ -11,6 +11,17 @@ WHERE s.to_date > CURDATE()
 GROUP BY e.gender, d.dept_name
 ORDER BY d.dept_name, e.gender;
 
+
+-- breakdown departments by gender
+SELECT COUNT(e.emp_no), e.gender, d.dept_name FROM employees AS e
+JOIN dept_emp AS de
+  ON de.emp_no = e.emp_no
+JOIN departments AS d
+  ON de.dept_no = d.dept_no
+WHERE de.to_date > curtime()
+GROUP BY d.dept_no, e.gender;
+
+
 	
 -- subqueries 
 -- current dept manager names
