@@ -34,3 +34,27 @@ WHERE emp_no IN (
 	WHERE to_date = '9999-01-01'
 );
 	
+-- most common birthday
+
+SELECT birth_date, COUNT(birth_date)
+FROM `employees`
+GROUP BY birth_date
+ORDER BY count(`birth_date`) DESC 
+LIMIT 1;
+
+-- least common birthday
+
+SELECT birth_date, COUNT(birth_date)
+FROM `employees`
+GROUP BY birth_date
+ORDER BY count(`birth_date`) ASC  
+LIMIT 1;
+
+
+
+-- what is the average salary of managers by department?
+-- how many employees currently work in each department?
+-- what is the average salary for each department?
+-- what was the average salary in the 80s? By department?
+-- how many times (on average) do employees switch titles?
+-- how many times (on average) do employees get a raise?
