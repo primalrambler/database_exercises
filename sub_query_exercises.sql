@@ -2,7 +2,7 @@
 
 SELECT CONCAT(first_name,' ',last_name) AS 'Full Name', hire_date
 FROM employees
-WHERE hire_date IN (
+WHERE hire_date = (  -- can use = instead of IN since it's a specific value
 	SELECT hire_date
 	FROM employees
 	WHERE emp_no = 101010
@@ -23,13 +23,13 @@ GROUP BY title;
 
 -- Find all the department managers that are female.
 
-SELECT CONCAT(first_name,' ',last_name), gender
+SELECT CONCAT(first_name,' ',last_name) AS 'Full Name', gender
 FROM `employees`
 WHERE emp_no IN (
 	SELECT `emp_no`
 	FROM dept_manager
 )
-	AND gender = 'F';
+AND gender = 'F';
 
 
 -- BONUS Find all the department names that have female managers.
@@ -44,4 +44,5 @@ WHERE dept_no IN (
 		FROM employees
 		WHERE gender = 'F'
 	)
+	AND to_date = '9999-01-01'
 );
